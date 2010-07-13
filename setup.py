@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
-# Copyright (C) 2008 John Paulett (john -at- 7oars.com)
+# Copyright (C) 2009, 2010 David Aguilar (davvid -at- gmail.com)
 # All rights reserved.
 #
 # This software is licensed as described in the file COPYING, which
@@ -9,19 +8,17 @@
 
 
 import sys
-import mockfs as _mockfs
+import mockfs
+import mockfs.mfs
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from distutils.core import setup
 
 
 SETUP_ARGS = dict(
-    name='jsonpickle',
-    version=_mockfs.__version__,
+    name='mockfs',
+    version=mockfs.__version__,
     description='Mock filesystem implementation for unit tests',
-    long_description = _mockfs.__doc__,
+    long_description=mockfs.mfs.__doc__,
     author='David Aguilar',
     author_email='davvid@gmail.com',
     url='http://github.com/davvid/mockfs',
@@ -33,7 +30,7 @@ SETUP_ARGS = dict(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Stable',
         'Intended Audience :: Developers',
         'Programming Language :: Python'
     ],
