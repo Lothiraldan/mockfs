@@ -105,7 +105,7 @@ class MockFS(object):
         return type(self._direntry(path)) is dict
 
     def isfile(self, path):
-        return not self.isdir(path)
+        return self.exists(path) and not self.isdir(path)
 
     def listdir(self, path):
         path = _sanitize(path)
