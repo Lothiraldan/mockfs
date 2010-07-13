@@ -34,6 +34,8 @@ def install(entries=None, pathmap=None):
     os.path.isfile = mockfs.isfile
     os.walk = mockfs.walk
     os.listdir = mockfs.listdir
+    
+    return mockfs
 
 
 def uninstall():
